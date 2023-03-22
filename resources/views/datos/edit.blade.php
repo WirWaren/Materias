@@ -1,4 +1,6 @@
-Formulario de edición de asignaturas.
+@extends('layouts.app')
+@section('content')
+<div class="container">
 
 <form action="{{ url('/datos/'.$infos->id) }}" method="post">
 @csrf
@@ -6,4 +8,6 @@ Formulario de edición de asignaturas.
 @include('datos.form');
 
 </form>
+</div>
+@endsection
 

@@ -15,7 +15,7 @@ use App\Http\Controllers\InformacionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 /*
 Route::get('/datos', function () {
@@ -26,3 +26,12 @@ Route::get('/datos/create',[InformacionController::class,'create']);
 
 Route::resource('datos',InformacionController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [InformacionController::class, 'index'])->name('home');
+
+Route::prefix('auth')->group(function () {
+
+    Route::get('/', [InformacionController::class, 'index'])->name('home');
+}); 

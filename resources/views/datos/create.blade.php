@@ -1,4 +1,6 @@
-Formulario de creación de asignaturas.
+@extends('layouts.app')
+@section('content')
+<div class="container">
 
 <form action="{{ url('/datos') }}" method="post">
 @csrf
@@ -6,3 +8,5 @@ Formulario de creación de asignaturas.
 
 
 </form>
+</div>
+@endsection

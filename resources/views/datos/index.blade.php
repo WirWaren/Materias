@@ -1,4 +1,6 @@
-Mostrar la lista de asignaturas.
+@extends('layouts.app')
+@section('content')
+<div class="container">
 
 <a href="{{ url('datos/create') }}">Registrar nueva asignatura</a>
 
@@ -43,3 +45,5 @@ Mostrar la lista de asignaturas.
         @endforeach
     </tbody>
 </table>
+</div>
+@endsection
