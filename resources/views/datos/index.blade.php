@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">
 
-<a href="{{ url('datos/create') }}">Registrar nueva asignatura</a>
+<a href="{{ url('datos/create') }}" class="btn btn-success" >Registrar nueva asignatura</a>
+<br/>
+<br/>
 
 <table class="table table-light">
     <thead class="thead-light">
@@ -27,15 +29,15 @@
             <td>{{$infos->Calificación2}}</td>
             <td>
                 
-            <a href="{{ url('/datos/'.$infos->id.'/edit') }}">
+            <a href="{{ url('/datos/'.$infos->id.'/edit') }}" class="btn btn-warning" >
                  Editar
             </a>
              | 
                 
-            <form action="{{url('/datos/'.$infos->id)}}" method="post">
+            <form action="{{url('/datos/'.$infos->id)}}" class="d-inline " method="post">
             @csrf
             {{ method_field('DELETE') }}
-            <input type="submit" onclick="return confirm('¿Deseas borrar la asignatura?')" 
+            <input class="btn btn-danger" type="submit" onclick="return confirm('¿Deseas borrar la asignatura?')" 
             value="Borrar">
 
             </form>

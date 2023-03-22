@@ -24,12 +24,12 @@ Route::get('/datos', function () {
 Route::get('/datos/create',[InformacionController::class,'create']);
 */
 
-Route::resource('datos',InformacionController::class);
+Route::resource('datos',InformacionController::class)->middleware('auth');
 
-
-Auth::routes();
+Auth::routes(['register'=>false,'reset'=>false]);
 
 Route::get('/home', [InformacionController::class, 'index'])->name('home');
+
 
 Route::prefix('auth')->group(function () {
 
